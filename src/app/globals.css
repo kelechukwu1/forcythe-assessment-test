@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #030516;
+  --foreground: #171717;
+  --font-family: var(--font-lexend);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #030516;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-lexend), Arial, Helvetica, sans-serif;
+}
+
+.bg-secondary-background {
+    --tw-bg-opacity: 1;
+    background-color: rgb(7 22 38 / var(--tw-bg-opacity));
+}
+.responsive-object-fit {
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .responsive-object-fit {
+    object-fit: contain;
+  }
+
+}
