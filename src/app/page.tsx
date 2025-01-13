@@ -10,12 +10,12 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className='mt-[6.3rem] md:mt-[6.8rem]'>
-      <div className="md:min-h-screen bg-[#030516] z-10" >
+      <div className="md:min-h-screen bg-[#030516]" >
         <Image
           src="/header-bg.png"
           alt="Background Image"
           layout="fill"
-          className="z-0 absolute responsive-object-fit"
+          className="z-0 absolute responsive-object-fit mt-9"
         />
         {/* Hero section */}
         <HeroSection />

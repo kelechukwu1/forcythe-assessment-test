@@ -24,8 +24,9 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <CustomButton
-                        text="Book a call"
+                        text="Book a Call"
                         icon={<RiArrowRightSFill className="text-2xl" />}
+                        className='mb-5'
                     />
                 </div>
             </div>

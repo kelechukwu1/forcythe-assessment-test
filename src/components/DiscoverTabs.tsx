@@ -44,8 +44,13 @@ const DiscoverTabs: React.FC = () => {
                     {tabs.map((tab, index) => (
                         <button
                             key={tab.id}
+                            role="tab"
+                            aria-selected={activeTab === index}
+                            aria-controls={`tabpanel-${index}`}
+                            id={`tab-${index}`}
                             className={`w-full flex justify-center items-center p-[1.1rem] cursor-pointer transition-all duration-300 ${activeTab === 0 && "rounded-s-full"} ${activeTab === 4 && "rounded-e-full"} ${activeTab === index && 'bg-[#0c2645]'}`}
                             onClick={() => handleTabClick(index)}
+                            onKeyPress={(e) => { if (e.key === 'Enter') handleTabClick(index) }}
                         >
                             <div className="flex items-center w-fit h-full col mx-auto gap-1.5 text-white text-[17px] font-medium min-w-fit justify-center">
                                 <Image src={tab.label} alt={`Tab ${index + 1}`} width={index === 0 ? 20 : 100}
@@ -56,7 +61,7 @@ const DiscoverTabs: React.FC = () => {
                     ))}
                 </div>
             </div>
-            <div className={`mt-5 w-full lg:w-[50%] flex relative ${activeTab === 0 ? 'md:justify-center md:items-center lg:justify-normal lg:items-start lg:left-0' : activeTab === 1 ? 'lg:left-[16rem]' : activeTab === 2 ? "lg:left-[33rem]" : activeTab === 3 ? 'lg:ml-[23rem]' : 'lg:ml-[38rem]'}`}>
+            <div id={`tabpanel-${activeTab}`} role="tabpanel" aria-labelledby={`tab-${activeTab}`} className={`mt-5 w-full lg:w-[50%] flex relative ${activeTab === 0 ? 'md:justify-center md:items-center lg:justify-normal lg:items-start lg:left-0' : activeTab === 1 ? 'lg:left-[16rem]' : activeTab === 2 ? "lg:left-[33rem]" : activeTab === 3 ? 'lg:ml-[23rem]' : 'lg:ml-[38rem]'}`}>
                 <div className={`md:w-[75%] lg:w-full flex flex-col sm:flex-row sm:p-7 bg-accent3 rounded-3xl overflow-hidden max-w-m mx-auto bg-[#0c2645] p-8 my-10`}>
                     <div className="relative z-10 md:flex gap-5">
                         <div className='mb-5 md:mb-0'>

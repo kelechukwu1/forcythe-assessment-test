@@ -125,3 +125,12 @@ export const productsData = [
         date: 'May 29, 2024',
     },
 ];
+
+export const footerIcons = [
+    { src: '/facebook.svg', href: '#' },
+    { src: '/instagram.svg', href: '#' },
+    { src: '/x.svg', href: '#' },
+    { src: '/linkedin.svg', href: '#' },
+    { src: '/youtube.svg', href: '#' },
+    { src: '/podcast.svg', href: '#' },
+]

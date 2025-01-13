@@ -38,19 +38,23 @@ const Header = () => {
           <Image src="/forcythe-logo.svg" alt="Forcythe logo" width={140} height={100} />
         </Link>
 
-        <div className='md:hidden p-3 rounded-xl bg-white bg-opacity-10 cursor-pointer' onClick={toggleMobileNav}>
+        <div className='md:hidden p-3 rounded-xl bg-white bg-opacity-10 cursor-pointer'
+          onClick={toggleMobileNav}
+          onKeyPress={(e) => { if (e.key === 'Enter') toggleMobileNav(); }}
+          tabIndex={0}
+        >
           <Image src="/menu.svg" alt="menu icon" width={20} height={20} />
         </div>
         <div className="hidden md:flex items-center gap-4 text-base">
           {
             navLinks.map((link, index) => (
-              <Link key={index} href={link.href}>{link.label}</Link>
+              <Link key={index} aria-label={link.label} href={link.href}>{link.label}</Link>
             ))
           }
         </div>
       </div>
       <div className='hidden md:block'>
-        <Button text="Book a call" />
+        <Button text="Book a Call" />
       </div>
 
 
@@ -66,7 +70,7 @@ const Header = () => {
                 <ul className='flex flex-col text-white'>
                   {
                     MobilenavLinks.map((link, index) => (
-                      <Link key={index} href={link.href} className='w-full py-2.5'>{link.label}</Link>
+                      <Link key={index} aria-label={link.label} href={link.href} className='w-full py-2.5'>{link.label}</Link>
                     ))
                   }
                 </ul>

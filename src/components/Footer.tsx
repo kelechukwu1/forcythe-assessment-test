@@ -7,8 +7,10 @@ import { Checkbox } from './ui/checkbox';
 import { Separator } from './ui/separator';
 import { RiArrowRightSFill } from 'react-icons/ri';
 import CustomButton from './CustomButton';
+import { footerIcons } from '@/data/dummyData';
 
 const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <footer className="px-5 lg:px-28 bg-footer-gradient">
       <div className='text-white py-12 mx-auto space-y-44 '>
@@ -38,9 +40,9 @@ const Footer = () => {
                   placeholder="Your Email Address"
                   className="placeholder:text-gray-400 placeholder:text-sm placeholder:pl-3 h-14 rounded-full"
                 />
-                <Button className="rounded-r-full bg-white text-black hover:bg-[#064386] transition-colors duration-300 hover:text-white hover:border hover:border-white absolute right-0 top-0 h-14 w-36 text-sm font-semibold">
+                <button className="rounded-r-full bg-white text-black hover:bg-[#064386] transition-colors duration-300 hover:text-white hover:border hover:border-white absolute right-0 top-0 h-14 w-36 text-sm font-semibold">
                   Subscribe
-                </Button>
+                </button>
               </div>
               <div className="flex items-center justify-start md:items-start space-x-2">
                 <Checkbox
@@ -113,6 +115,7 @@ const Footer = () => {
                     <Link
                       key={item}
                       href={`/${item.toLowerCase()}`}
+                      aria-label={item}
                       className="block text-[#B3D0F2] hover:text-white transition-colors"
                     >
                       {item}
@@ -121,15 +124,8 @@ const Footer = () => {
                 </nav>
               </div>
               <div className="md:hidden flex justify-center md:justify-start space-x-4">
-                {[
-                  { src: '/facebook.svg', href: '#' },
-                  { src: '/instagram.svg', href: '#' },
-                  { src: '/x.svg', href: '#' },
-                  { src: '/linkedin.svg', href: '#' },
-                  { src: '/youtube.svg', href: '#' },
-                  { src: '/podcast.svg', href: '#' },
-                ].map(({ src }, index) => (
-                  <div
+                {footerIcons.map(({ src }, index) => (
+                  <button
                     className="w-[44px] h-[44px] rounded-full border border-gray-600 hover:border-gray-400 transition-colors relative"
                     key={index}
                   >
@@ -140,14 +136,7 @@ const Footer = () => {
                       height={40}
                       className="h-6 w-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                     />
-                  </div>
-                  // <Link
-                  //   key={index}
-                  //   href={href}
-                  //   className="p-2 rounded-full border border-gray-600 hover:border-gray-400 transition-colors"
-                  // >
-
-                  // </Link>
+                  </button>
                 ))}
               </div>
             </div>
@@ -156,7 +145,7 @@ const Footer = () => {
           <div className="space-y-5">
             <Separator className="bg-[#60A6E7]" />
             <p className="text-[#60A6E7]">
-              Copyright © 2024 Forcythe. All rights reserved.
+              Copyright © {year} Forcythe. All rights reserved.
             </p>
           </div>
         </div>

@@ -31,13 +31,14 @@ const SparkToSpotlight: React.FC = () => {
                         <div className="md:pr-10">
                             <div className="border-2 border-[#b3d0f2] mb-12 rounded-full grid gap-1 grid-cols-4 p-3.5">
                                 {SparkToLightTabs.map((item, index) => (
-                                    <Button
+                                    <button
                                         key={item.id}
                                         onClick={() => setActiveTab(index)}
+                                        onKeyPress={(e) => { if (e.key === 'Enter') setActiveTab(index) }}
                                         className={`${activeTab === index ? 'bg-[#a4c2e4] text-black hover:bg-[#92b8e3]' : "text-white bg-none"} px-2 md:px-8 py-3 md:py-7 rounded-full text-center overflow-hidden text-base font-medium cursor-pointer transition-all duration-300`}
                                     >
                                         {item.label}
-                                    </Button>
+                                    </button>
                                 ))}
                             </div>
                         </div>
