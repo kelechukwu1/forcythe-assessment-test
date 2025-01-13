@@ -3,6 +3,7 @@ import { Lexend } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Script from 'next/script';
 
 const lexend = Lexend({
   variable: '--font-lexend',
@@ -26,6 +27,18 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Script id="zoho-salesiq-init" strategy="afterInteractive">
+          {`
+            window.$zoho=window.$zoho || {};
+            $zoho.salesiq=$zoho.salesiq || {ready:function(){}};
+          `}
+        </Script>
+        <Script
+          id="zoho-salesiq-script"
+          src="https://salesiq.zohopublic.com/widget?wc=siq8700f0187da5bf7db81c2d216140dd315b102243873dab939f9151d94fa8936b"
+          strategy="afterInteractive"
+          defer
+        />
       </body>
     </html>
   );
