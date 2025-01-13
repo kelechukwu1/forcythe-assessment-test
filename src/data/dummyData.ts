@@ -134,3 +134,12 @@ export const footerIcons = [
     { src: '/youtube.svg', href: '#' },
     { src: '/podcast.svg', href: '#' },
 ]
+export const usefulLinks = [
+    'About',
+    'Services',
+    'Portfolio',
+    'Studio',
+    'Foundation',
+    'Careers',
+    'Blog',
+]

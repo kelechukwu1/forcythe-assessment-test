@@ -7,7 +7,7 @@ import { Checkbox } from './ui/checkbox';
 import { Separator } from './ui/separator';
 import { RiArrowRightSFill } from 'react-icons/ri';
 import CustomButton from './CustomButton';
-import { footerIcons } from '@/data/dummyData';
+import { footerIcons, usefulLinks } from '@/data/dummyData';
 
 const Footer = () => {
   const year = new Date().getFullYear()
@@ -103,15 +103,7 @@ const Footer = () => {
               <div className="w-[35%]">
                 <h3 className="text-2xl font-semibold mb-6">Company</h3>
                 <nav className="space-y-4">
-                  {[
-                    'About',
-                    'Services',
-                    'Portfolio',
-                    'Studio',
-                    'Foundation',
-                    'Careers',
-                    'Blog',
-                  ].map((item) => (
+                  {usefulLinks.map((item) => (
                     <Link
                       key={item}
                       href={`/${item.toLowerCase()}`}
