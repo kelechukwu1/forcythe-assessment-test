@@ -11,9 +11,9 @@ const lexend = Lexend({
 });
 
 export const metadata: Metadata = {
-  title: 'Assessment Screening Test',
+  title: 'Forcythe Landing Page',
   description:
-    'This is an assessment screening test to replicate forcythe.com landing page',
+    'This is forcythe.com landing page',
 };
 
 export default function RootLayout({
